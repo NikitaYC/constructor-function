@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+function BankAccount(accountNumber, name, type, balance){
+    this.accountNumber = accountNumber;
+    this.name = name;
+    this.type = type;
+    this.balance = balance;
+    this.active = true;
+
+    this.deposite = function(amount){
+        this.balance += amount;
+    }
+
+    this.withDraw = function(amount){
+
+        if(amount <= this.balance)
+        {
+            console.log("successfully withdrawn", amount)
+        }
+        else{
+            console.log("indufficient balance", this.balance)
+        }
+    }
+
+    this.getTotalBalance = function(){
+        console.log(`Your total balance is - ${this.balance}`)
+    }
+
+    this.checkBalance = function(){
+        console.log(`Account balance: ${this.balance}`)
+    }
+
+    this.isActive = function(){
+        return this.active;
+    }
+}
+
+let ac1 = new BankAccount(1234567, "Nikita", "saving", 60000)
+
+let ac2 = new BankAccount(98765432, "Ajay", "Dmat", 70000)
+
+console.log(ac1)
+console.log(ac2)
+
+ac1.deposite(300)
+console.log(ac1)
+
+ac2.withDraw(80000)
+console.log(ac2)
+
+ac1.getTotalBalance();
+</script>

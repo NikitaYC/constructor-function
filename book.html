@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Author(name, birthYear, nationality){
+        this.name = name;
+        this.birthYear = birthYear;
+        this.nationality = nationality;
+    }
+
+    function Book(title, Author, genre, price){
+        this.title = title;
+        this.Author = Author;
+        this.genre = genre;
+        this.price = price;
+    }
+
+    Book.prototype.getBookInfo = function()
+    {
+        console.log(`Title: ${this.title}`);
+        console.log(`Author: ${this.Author.name}`);
+        console.log(`Genre: ${this.genre}`);
+        console.log(`price: ${this.price}`);
+    }
+
+    let author1 = new Author("Sudha Murty", 1998, "Indian")
+
+    let book1 = new Book("Wise and otherwise", author1, "stories", 150)
+
+    book1.getBookInfo();
+</script>
